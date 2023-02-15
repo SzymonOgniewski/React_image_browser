@@ -14,6 +14,7 @@ export class App extends React.PureComponent {
     page = 1;
     perPage = 12;
     const response = await fetchImages(searchQuery);
+    console.log(response);
   };
 
   handleChange = e => {
