@@ -25,7 +25,7 @@ export class ImageGallery extends Component {
   };
 
   render() {
-    const { images, page, totalPages, handleLoadMore } = this.props;
+    const { images, page, totalPages, onLoadMore } = this.props;
     const { isModalOpen, selectedImage, selectedTags } = this.state;
     const list = images.map(img => (
       <ImageGalleryItem
@@ -45,10 +45,10 @@ export class ImageGallery extends Component {
           <Modal
             largeImg={selectedImage}
             tags={selectedTags}
-            handleCloseModal={this.handleModalClose}
+            onCloseModal={this.handleModalClose}
           />
         )}
-        {page < totalPages && <LoadMoreBtn handleLoadMore={handleLoadMore} />}
+        {page < totalPages && <LoadMoreBtn onLoadMore={onLoadMore} />}
       </>
     );
   }

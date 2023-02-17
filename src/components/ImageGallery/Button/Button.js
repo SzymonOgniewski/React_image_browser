@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import css from './loadmorebtn.module.css';
 export class LoadMoreBtn extends Component {
   render() {
-    const { handleLoadMore } = this.props;
+    const { onLoadMore } = this.props;
     return (
       <>
-        <button type="button" className={css.button} onClick={handleLoadMore}>
+        <button type="button" className={css.button} onClick={onLoadMore}>
           Load more...
         </button>
       </>
@@ -14,5 +14,5 @@ export class LoadMoreBtn extends Component {
   }
 }
 LoadMoreBtn.propTypes = {
-  handleLoadMore: PropTypes.func,
+  onLoadMore: PropTypes.func,
 };

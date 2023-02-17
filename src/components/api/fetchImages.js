@@ -6,9 +6,9 @@ const params = {
   orientation: 'horizontal',
   perPage: '12',
 };
-export const fetchImages = async (searchQuery, page, perPage) => {
+export const fetchImages = async (searchQuery, page) => {
   const response = await axios.get(
-    `${params.url}?key=${params.key}&q=${searchQuery}&image_type=${params.imageType}&orientation=${params.orientation}&page=${page}&per_page=${perPage}`
+    `${params.url}?key=${params.key}&q=${searchQuery}&image_type=${params.imageType}&orientation=${params.orientation}&page=${page}&per_page=${params.perPage}`
   );
   const data = await response;
   return data.data;

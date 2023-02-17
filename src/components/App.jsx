@@ -10,7 +10,6 @@ export class App extends React.PureComponent {
     fetchedImages: [],
     currentSearch: '',
     page: '1',
-    perPage: '12',
     totalHits: '0',
     totalPages: '0',
     isLoading: false,
@@ -35,9 +34,8 @@ export class App extends React.PureComponent {
             return;
           }
           Notiflix.Notify.success(`${data.totalHits} images found`);
-          const totalPagesAmount = Math.ceil(
-            data.totalHits / this.state.perPage
-          );
+          const perPage = 12;
+          const totalPagesAmount = Math.ceil(data.totalHits / perPage);
           this.setState({ totalPages: totalPagesAmount });
         });
       }
@@ -48,11 +46,7 @@ export class App extends React.PureComponent {
     searchQuery = this.state.currentSearch;
     const searchQueryTrimed = searchQuery.trim();
     try {
-      const response = await fetchImages(
-        searchQueryTrimed,
-        this.state.page,
-        this.state.perPage
-      );
+      const response = await fetchImages(searchQueryTrimed, this.state.page);
       this.setState({ isLoading: false });
       if (response.totalHits === 0) {
         Notiflix.Notify.failure('Something went wrong, try again.');
@@ -92,7 +86,7 @@ export class App extends React.PureComponent {
             images={this.state.fetchedImages}
             page={this.state.page}
             totalPages={this.state.totalPages}
-            handleLoadMore={this.handleLoadMoreFunc}
+            onLoadMore={this.handleLoadMoreFunc}
           />
         )}
       </div>

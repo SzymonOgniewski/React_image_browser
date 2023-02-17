@@ -11,15 +11,15 @@ export class Modal extends Component {
   }
   handleKeyDown = event => {
     if (event.key === 'Escape') {
-      this.props.handleCloseModal();
+      this.props.onCloseModal();
     }
   };
 
   render() {
-    const { largeImg, tags, handleCloseModal } = this.props;
+    const { largeImg, tags, onCloseModal } = this.props;
 
     return (
-      <div className={css.overlay} onClick={handleCloseModal}>
+      <div className={css.overlay} onClick={onCloseModal}>
         <div className={css.modal}>
           <img src={largeImg} alt={tags} className={css.modalImg} />
         </div>
@@ -30,5 +30,5 @@ export class Modal extends Component {
 Modal.propTypes = {
   src: PropTypes.string,
   tags: PropTypes.string,
-  handleCloseModal: PropTypes.func,
+  onCloseModal: PropTypes.func,
 };
