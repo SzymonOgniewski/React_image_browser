@@ -1,6 +1,5 @@
 import React from 'react';
 import { fetchImages } from './api/fetchImages';
-import './app.css';
 import { Searchbar } from './Searchbar/Searchbar';
 import Notiflix from 'notiflix';
 import { ImageGallery } from './ImageGallery/ImageGallery';
