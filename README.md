@@ -1,6 +1,6 @@
 # [React image browser](https://szymonogniewski.github.io/React_image_browser/)
 
-This is an image browser made using [Pixabay API](https://pixabay.com/api/)
+This is an image browser made using [Pixabay API](https://pixabay.com/api/).
 
 ## Technologies
 
